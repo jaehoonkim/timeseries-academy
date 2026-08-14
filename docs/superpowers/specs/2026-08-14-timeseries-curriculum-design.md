@@ -49,22 +49,27 @@
 
 ```
 ts/
-├── README.md                  # 개요, 진행 방법, 모듈 조합 가이드, M8용 데이터 후보
-├── PROGRESS.md                # 강의자 학습 체크리스트
-├── data/
+├── README.md                  # 저장소 개요, 과정 목록
+├── data/                      # 과정 간 공유 실습 데이터
 │   ├── seoul-temp-daily.csv   # 공통 실습 데이터
 │   └── README.md              # 출처, 갱신 방법
-├── modules/
-│   ├── 01-time-data/
-│   │   ├── teacher.md         # 강의자 노트
-│   │   ├── worksheet.md       # 학생 배포용 (정답 없음, 인쇄 가능 수준)
-│   │   ├── practice.md        # 강의자 사전 학습 과제
-│   │   └── answers.md         # 정답 + 완성 예시
-│   ├── 02-averages/ … 05-forecasting/   # 동일 4파일 구조
-│   ├── 06-python-intro/ … 08-mini-project/
-│   │   └── (+ notebook.ipynb) # 파이썬 모듈만: 학생용 빈칸 노트북
+├── courses/
+│   └── middle/                # 중학생 과정 (본 스펙의 범위)
+│       ├── README.md          # 과정 개요, 진행 방법, 모듈 조합 가이드, M8용 데이터 후보
+│       ├── PROGRESS.md        # 강의자 학습 체크리스트
+│       └── modules/
+│           ├── 01-time-data/
+│           │   ├── teacher.md         # 강의자 노트
+│           │   ├── worksheet.md       # 학생 배포용 (정답 없음, 인쇄 가능 수준)
+│           │   ├── practice.md        # 강의자 사전 학습 과제
+│           │   └── answers.md         # 정답 + 완성 예시
+│           ├── 02-averages/ … 05-forecasting/   # 동일 4파일 구조
+│           ├── 06-python-intro/ … 08-mini-project/
+│           │   └── (+ notebook.ipynb) # 파이썬 모듈만: 학생용 빈칸 노트북
 └── docs/superpowers/specs/
 ```
+
+`courses/<level>/` 한 단계는 미래 방향(아래) 대비이며, 이 스펙의 구현 범위는 `courses/middle/` 뿐이다.
 
 ### 파일별 역할
 
@@ -91,6 +96,13 @@ ts/
 - 파이썬 노트북 코드는 전달 전 실제 실행으로 동작 확인
 - worksheet는 중학교 수학 과정 준수 셀프 체크
 - 모듈 문서 4종의 내용 일치 (worksheet 활동 ↔ answers 정답 ↔ teacher 흐름)
+
+## 미래 방향 (이 스펙의 범위 아님)
+
+대상별 과정을 단계적으로 확장한다: 중학생(본 스펙) → 고등학생 → 대학생 → 직장인.
+각 과정은 시작 시점에 별도 스펙으로 설계하며, 중학생 과정의 제작·강의 경험을
+상위 과정 설계의 입력으로 삼는다. 공유 데이터(`data/`)와 `courses/<level>/`
+구조 외에 지금 미리 만드는 것은 없다.
 
 ## 범위 밖 (YAGNI)
 
