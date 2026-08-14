@@ -42,12 +42,13 @@
 
 1. 새 시트를 만들고 A1 셀에 아래 수식을 붙여넣는다.
 
-```
-=IMPORTDATA("https://raw.githubusercontent.com/jaehoonkim/timeseries-academy/main/data/seoul-temp-daily.csv")
-```
+   ```
+   =IMPORTDATA("https://raw.githubusercontent.com/jaehoonkim/timeseries-academy/main/data/seoul-temp-daily.csv")
+   ```
 
-   (수식이 안 되면: 선생님이 주는 `seoul-temp-daily.csv` 파일을
-   파일 → 가져오기로 불러온다.)
+   수식이 안 되면: 선생님이 주는 `seoul-temp-daily.csv` 파일을
+   파일 → 가져오기로 불러온다.
+
 2. `date`열과 `temp_avg`열을 선택해 꺾은선 그래프를 만든다.
 
 **Q5.** 3년 그래프에는 어떤 모양이 반복되는가? 왜 그런 모양이 생길까?
