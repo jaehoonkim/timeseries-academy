@@ -35,3 +35,7 @@
 
 worksheet의 IMPORTDATA URL이 열리는지 브라우저에서 한 번 확인:
 <https://raw.githubusercontent.com/jaehoonkim/timeseries-academy/main/data/seoul-temp-daily.csv>
+
+이 URL은 저장소가 **공개(public)일 때만** 열린다. 비공개 상태라면 수업 전에
+저장소를 공개로 전환하거나, `data/seoul-temp-daily.csv`를 학생들에게 직접
+배포하고 파일 → 가져오기를 쓰게 한다.
