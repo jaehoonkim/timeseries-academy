@@ -24,7 +24,7 @@
 |---|---|---|
 | [M6](modules/06-python-revisit/) | 파이썬으로 다시 보기 | Colab 시작, pandas로 CSV 읽기, M1~M3 재현 |
 | [M7](modules/07-pandas-tools/) | pandas 시계열 도구 | 날짜 인덱스, resample, rolling, 결측치 처리 |
-| M8 | 미니 프로젝트 | 각자 데이터 수집 → 분석 → 예측 → 발표 |
+| [M8](modules/08-mini-project/) | 미니 프로젝트 | 각자 데이터 수집 → 분석 → 예측 → 발표 |
 
 ## 모듈 조합 가이드
 
