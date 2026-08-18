@@ -14,7 +14,7 @@
 |---|---|---|
 | [H1](modules/01-python-timeseries/) | 시계열과 파이썬 | 시계열 정의, Colab/pandas, 날짜 인덱스, 그래프 |
 | [H2](modules/02-distribution/) | 분포로 보는 시계열 | 표준편차, 히스토그램·상자그림, z-점수 이상치 탐지 |
-| H3 | 평활 — 이동평균과 지수평활 | rolling(후행/중심), ewm, 창·α 트레이드오프 |
+| [H3](modules/03-smoothing/) | 평활 — 이동평균과 지수평활 | rolling(후행/중심), ewm, 창·α 트레이드오프 |
 | H4 | 계절성과 분해 | 계절성 프로필, 편차, 추세+계절+잔차 손 분해 |
 | H5 | 자기상관 | 상관계수, lag plot, ACF, naive가 강한 이유 |
 | H6 | 예측과 평가 | 벤치마크 4종 대결, 홀드아웃, MAE·RMSE |
