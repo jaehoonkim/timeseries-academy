@@ -27,9 +27,11 @@ def m1():
     out = MODULES / "01-time-data" / "img"
     out.mkdir(exist_ok=True)
     fig, ax = plt.subplots(figsize=(10, 4))
-    df["temp_avg"].plot(ax=ax)
+    # ponytail: 14일 미리보기만 표시 — 전체 3년을 그리면 계절 파형이 보여
+    # worksheet Q5(반복되는 물결 모양)의 답을 미리 스포일링한다.
+    df["temp_avg"].head(14).plot(ax=ax, marker="o")
     ax.set_ylabel("°C")
-    ax.set_title("서울 하루 평균기온")
+    ax.set_title("서울 하루 평균기온 (14일 미리보기)")
     fig.savefig(out / "temp-line.png", dpi=150, bbox_inches="tight")
 
 
