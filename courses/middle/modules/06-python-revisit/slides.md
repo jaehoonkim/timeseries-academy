@@ -144,24 +144,32 @@ df.plot(x="date", y=["temp_avg", "temp_max", "temp_min"])
 
 ## M2 재현 — 평균과 중앙값
 
+`df["열이름"]`에 함수를 붙인다. 새 셀마다 하나씩 실행한다.
+
 ```python
 df["temp_avg"].mean()
+```
+
+```python
 df["temp_avg"].median()
+```
+
+```python
 df["temp_avg"].max()
+```
+
+```python
 df["temp_avg"].min()
 ```
 
-- `df["열이름"]`으로 한 열만 뽑아, 그 뒤에 `.mean()`처럼 함수를
-  붙인다.
-- max·min으로 상식적인 범위인지 확인하는 것도 코드로 할 수 있다 —
-  M2의 오타 탐지를 코드로 하는 셈이다.
+max·min으로 상식적인 범위인지 확인하는 것도 코드로 할 수 있다.
 
 ---
 
 ## M3 재현 — 이동평균
 
 > `df["temp_avg"].rolling(7).mean()`
-> = temp_avg에 / 7일짜리 창을 하루씩 밀며(rolling) / 창마다 평균
+> = temp_avg에 / **7일짜리 창을 하루씩 밀며**(rolling) / 창마다 **평균**
 
 ```python
 df["ma7"] = df["temp_avg"].rolling(7).mean()
