@@ -35,6 +35,24 @@ def m1():
     fig.savefig(out / "temp-line.png", dpi=150, bbox_inches="tight")
 
 
+def m3():
+    df = load()
+    out = MODULES / "03-moving-average" / "img"
+    out.mkdir(exist_ok=True)
+    # ponytail: 2024년 봄 90일만 크롭 — 전체 3년을 그리면 7일 창으로도
+    # 계절 물결이 보여 Q6~Q8(창 크기 실험) 방향을 암시하고, 2023년 8월
+    # (태풍 카눈, Q5)·10월(손 계산 주간, Q1~Q3)을 포함하면 그래프에서
+    # 답을 읽어낼 수 있어 두 구간을 모두 피한 다른 시기를 쓴다.
+    t = df.loc["2024-02-01":"2024-04-30", "temp_avg"]
+    fig, ax = plt.subplots(figsize=(10, 4))
+    t.plot(ax=ax, alpha=0.4, label="하루하루")
+    t.rolling(7).mean().plot(ax=ax, label="7일 이동평균")
+    ax.set_ylabel("°C")
+    ax.set_title("서울 하루 평균기온 — 2024년 봄 90일")
+    ax.legend()
+    fig.savefig(out / "ma-overlay.png", dpi=150, bbox_inches="tight")
+
+
 if __name__ == "__main__":
     for name in sys.argv[1:] or ["m1"]:
         globals()[name]()
