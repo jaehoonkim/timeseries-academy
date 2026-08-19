@@ -83,7 +83,7 @@ df["값열"].isna().sum()
 - [ ] **오타 탐지 (M2)** — `.describe()` 또는 `.max()`/`.min()`.
   상식적인 범위인가? 튀는 값이 있다면 — 오타인가, 사건인가?
   **지우기 전에 원인부터.**
-- [ ] **이동평균 (M3)** — `.rolling(창).mean()`. 창 크기는 무엇으로,
+- [ ] **이동평균 (M3)** — `.rolling(window=창).mean()`. 창 크기는 무엇으로,
   왜? (일별 데이터의 7은 일주일. **주별 데이터라면 7은 7주다!**)
 - [ ] **계절성 (M4)** — 월별: `df.groupby(df.index.month)["값열"].mean()`,
   요일별: `df.groupby(df.index.dayofweek)["값열"].mean()` (0=월요일).
@@ -103,7 +103,7 @@ df["값열"].isna().sum()
 ```python
 actual = df["값열"]
 pred_naive = actual.shift(1)
-pred_ma = actual.rolling(7).mean().shift(1)
+pred_ma = actual.rolling(window=7).mean().shift(1)
 
 n = 31  # 시험 기간(행 수) — 내 데이터에 맞게
 print("내일은 오늘과 같다:", (pred_naive - actual).abs().tail(n).mean())

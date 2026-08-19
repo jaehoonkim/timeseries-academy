@@ -148,7 +148,7 @@ df["temp_avg"].resample("YE").count()
 
 ## rolling의 숨은 옵션 — center=True
 
-- `rolling(7)`은 항상 **그날까지의 7일**(뒤로 난 창)을 본다 — 그래서
+- `rolling(window=7)`은 항상 **그날까지의 7일**(뒤로 난 창)을 본다 — 그래서
   M3에서 이동평균이 급한 변화를 며칠 늦게 따라갔다.
 - `center=True`는 창의 **가운데**에 그날을 놓는다(앞 3일 + 그날 + 뒤
   3일).
@@ -165,8 +165,8 @@ trailing과 centered를 나란히 놓고 비교해 보자.
 avg = df["temp_avg"]
 compare = pd.DataFrame({
     "actual": avg,
-    "trailing": avg.rolling(7).mean(),
-    "centered": avg.rolling(7, center=True).mean(),
+    "trailing": avg.rolling(window=7).mean(),
+    "centered": avg.rolling(window=7, center=True).mean(),
 })
 compare.loc["2023-08"].plot()
 ```

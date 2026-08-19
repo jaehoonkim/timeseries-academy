@@ -130,17 +130,17 @@ df.tail(31)["temp_avg"].median()
 M3에서 `=AVERAGE(B2:B8)`을 채우기로 1,090행 복사했던 일이 한 줄이
 된다. 먼저 읽는 법:
 
-> `df["temp_avg"].rolling(7).mean()`
+> `df["temp_avg"].rolling(window=7).mean()`
 > = temp_avg에 / **7일짜리 창을 하루씩 밀며**(rolling) / 창마다 **평균**
 
-- `rolling(7)` — M3에서 손으로 밀던 바로 그 **창**이다. rolling은
+- `rolling(window=7)` — M3에서 손으로 밀던 바로 그 **창**이다. rolling은
   "굴러간다"는 뜻 — 창이 하루씩 굴러 내려간다.
 - `.mean()` — 창마다 평균을 낸다. 그 결과가 이동평균.
 - `df["ma7"] = ...` — 계산 결과를 `ma7`이라는 **새 열**에 담는다.
   M3에서 E열에 이동평균을 만들던 것과 같은 일이다.
 
 ```python
-df["ma7"] = df["temp_avg"].rolling(7).mean()
+df["ma7"] = df["temp_avg"].rolling(window=7).mean()
 df.head(10)
 ```
 
@@ -152,7 +152,7 @@ NaN은 무엇일까? M3의 시트에서 본 것 중 무엇과 같은가?
 365일 이동평균까지 얹어 M3의 마지막 그래프를 재현하자:
 
 ```python
-df["ma365"] = df["temp_avg"].rolling(365).mean()
+df["ma365"] = df["temp_avg"].rolling(window=365).mean()
 df.plot(x="date", y=["temp_avg", "ma7", "ma365"])
 ```
 

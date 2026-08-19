@@ -26,7 +26,7 @@
 
    ```python
    pred_naive = df["temp_avg"].shift(1)
-   pred_ma7 = df["temp_avg"].rolling(7).mean().shift(1)
+   pred_ma7 = df["temp_avg"].rolling(window=7).mean().shift(1)
    print((pred_naive - df["temp_avg"]).abs().tail(31).mean())
    print((pred_ma7 - df["temp_avg"]).abs().tail(31).mean())
    ```

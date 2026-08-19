@@ -118,7 +118,7 @@ df["temp_avg"].resample("YE").count()
 
 ## 4. rolling의 숨은 옵션 — 지연 없는 이동평균
 
-`rolling(7)`은 M6에서 배운 "7일 창을 하루씩 밀며 계산하기"다.
+`rolling(window=7)`은 M6에서 배운 "7일 창을 하루씩 밀며 계산하기"다.
 지금까지의 창은 항상 **그날까지의 7일**(뒤로 난 창)이었다 — 그래서
 M3에서 이동평균이 급락을 **며칠 늦게** 따라갔다. `center=True`
 옵션은 창의 **가운데**에 그날을 놓는다(앞 3일 + 그날 + 뒤 3일).
@@ -128,8 +128,8 @@ M3에서 이동평균이 급락을 **며칠 늦게** 따라갔다. `center=True`
 avg = df["temp_avg"]
 compare = pd.DataFrame({
     "actual": avg,
-    "trailing": avg.rolling(7).mean(),
-    "centered": avg.rolling(7, center=True).mean(),
+    "trailing": avg.rolling(window=7).mean(),
+    "centered": avg.rolling(window=7, center=True).mean(),
 })
 compare.loc["2023-08"].plot()
 ```

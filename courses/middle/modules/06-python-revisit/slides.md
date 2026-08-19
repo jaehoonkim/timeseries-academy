@@ -168,15 +168,15 @@ max·min으로 상식적인 범위인지 확인하는 것도 코드로 할 수 �
 
 ## M3 재현 — 이동평균
 
-> `df["temp_avg"].rolling(7).mean()`
+> `df["temp_avg"].rolling(window=7).mean()`
 > = temp_avg에 / **7일짜리 창을 하루씩 밀며**(rolling) / 창마다 **평균**
 
 ```python
-df["ma7"] = df["temp_avg"].rolling(7).mean()
+df["ma7"] = df["temp_avg"].rolling(window=7).mean()
 df.head(10)
 ```
 
-`rolling(7)`은 M3에서 손으로 밀던 바로 그 창이다. 표 앞부분에는
+`rolling(window=7)`은 M3에서 손으로 밀던 바로 그 창이다. 표 앞부분에는
 계산할 데이터가 모자라 **NaN**(값 없음)이 나온다 — 무엇과 같은
 자리일지 활동지에서 확인해 보자.
 

@@ -45,8 +45,8 @@
 ## 완성 노트북 예시 설명
 
 - 셀 구성: ① print/계산 ② import+read_csv ③ len/tail ④ plot 1선
-  ⑤ plot 3선 ⑥ 통계 4종 ⑦ tail(31) 통계 ⑧ rolling(7)+head
-  ⑨ rolling(365)+plot — 아홉 셀이면 1부 3개 모듈이 재현된다.
+  ⑤ plot 3선 ⑥ 통계 4종 ⑦ tail(31) 통계 ⑧ rolling(window=7)+head
+  ⑨ rolling(window=365)+plot — 아홉 셀이면 1부 3개 모듈이 재현된다.
 - ⑨의 그래프는 M3의 "창 크기 비교 차트"와 같은 구도: 뾰족한 원본,
   부드러운 ma7, 거의 수평에 살짝 오르막인 ma365.
 

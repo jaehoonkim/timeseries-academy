@@ -123,7 +123,7 @@ df.head()
 ```python
 actual = df["값열"]
 pred_naive = actual.shift(1)
-pred_ma = actual.rolling(7).mean().shift(1)
+pred_ma = actual.rolling(window=7).mean().shift(1)
 ```
 
 - `.shift(1)`은 "예측은 전날까지의 정보만"이라는 규칙 —

@@ -46,7 +46,7 @@ def m3():
     t = df.loc["2024-02-01":"2024-04-30", "temp_avg"]
     fig, ax = plt.subplots(figsize=(10, 4))
     t.plot(ax=ax, alpha=0.4, label="하루하루")
-    t.rolling(7).mean().plot(ax=ax, label="7일 이동평균")
+    t.rolling(window=7).mean().plot(ax=ax, label="7일 이동평균")
     ax.set_ylabel("°C")
     ax.set_title("서울 하루 평균기온 — 2024년 봄 90일")
     ax.legend()
