@@ -48,12 +48,12 @@ t = df["temp_avg"]
 
 1절의 손 계산을 1,096일 전체에 하는 코드 — 읽는 법:
 
-> `t.rolling(7).mean()`
+> `t.rolling(window=7).mean()`
 > = t 위에 **7일짜리 창**을 얹어 / 하루씩 **밀며(rolling)** /
 > 창 안의 **평균**을 구하라
 
 ```python
-ma7 = t.rolling(7).mean()
+ma7 = t.rolling(window=7).mean()
 ma7.head(10)
 ```
 
@@ -86,8 +86,8 @@ ma7.loc["2023-08"].plot()
 ## 3. 창 크기 실험 — 7일, 30일, 365일
 
 ```python
-ma30 = t.rolling(30).mean()
-ma365 = t.rolling(365).mean()
+ma30 = t.rolling(window=30).mean()
+ma365 = t.rolling(window=365).mean()
 t.plot()
 ma30.plot()
 ma365.plot()
@@ -116,10 +116,10 @@ ma365.plot()
 
 ## 4. 뒤늦은 창 — 후행과 중심
 
-`rolling(7)`의 창은 "**지난** 7일"이다(후행). 창을 그날의 앞뒤
+`rolling(window=7)`의 창은 "**지난** 7일"이다(후행). 창을 그날의 앞뒤
 3일씩으로 바꿀 수도 있다(중심):
 
-> `t.rolling(7, center=True).mean()`
+> `t.rolling(window=7, center=True).mean()`
 > = 7일 창을 밀되 / 결과를 창의 **한가운데 날**에 적어라
 > (그날 기준 앞 3일 + 그날 + 뒤 3일의 평균)
 
@@ -127,7 +127,7 @@ ma365.plot()
 방식을 비교한다:
 
 ```python
-ma7c = t.rolling(7, center=True).mean()
+ma7c = t.rolling(window=7, center=True).mean()
 t.loc["2026-01"].plot()
 ma7.loc["2026-01"].plot()
 ma7c.loc["2026-01"].plot()
