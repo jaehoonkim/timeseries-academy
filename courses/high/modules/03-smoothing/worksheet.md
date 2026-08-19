@@ -62,19 +62,20 @@ ma7.head(10)
 
 ______일  이유: ____________
 
-원본 위에 겹쳐 그린다. (한 셀에 plot을 여러 줄 쓰면 겹쳐 그려지고,
-색은 실행 순서대로 파랑 → 주황 → 초록이다)
+원본 위에 겹쳐 그린다. 한 셀에 plot을 여러 줄 쓰면 겹쳐 그려진다.
+`label=`은 선의 이름표, `legend=True`는 그 이름표들을 범례로
+띄우라는 뜻 — 어느 선이 어느 것인지 그래프가 직접 말하게 한다.
 
 ```python
-t.plot()
-ma7.plot()
+t.plot(label="원본", legend=True)
+ma7.plot(label="7일 이동평균", legend=True)
 ```
 
 태풍 카눈이 지나간 2023년 8월을 확대해 보자:
 
 ```python
-t.loc["2023-08"].plot()
-ma7.loc["2023-08"].plot()
+t.loc["2023-08"].plot(label="원본", legend=True)
+ma7.loc["2023-08"].plot(label="7일 이동평균", legend=True)
 ```
 
 **Q5.** 태풍 당일(2023-08-10)의 원본 값과 이동평균 값을 확인하자
@@ -88,9 +89,9 @@ ma7.loc["2023-08"].plot()
 ```python
 ma30 = t.rolling(window=30).mean()
 ma365 = t.rolling(window=365).mean()
-t.plot()
-ma30.plot()
-ma365.plot()
+t.plot(label="원본", legend=True)
+ma30.plot(label="30일", legend=True)
+ma365.plot(label="365일", legend=True)
 ```
 
 **Q6.** 창이 커질수록(7 → 30 → 365) 선은 어떻게 달라지는가?
@@ -131,13 +132,13 @@ ma365.plot()
 
 ```python
 ma7c = t.rolling(window=7, center=True).mean()
-t.loc["2026-01"].plot()
-ma7.loc["2026-01"].plot()
-ma7c.loc["2026-01"].plot()
+t.loc["2026-01"].plot(label="원본", legend=True)
+ma7.loc["2026-01"].plot(label="후행 7일", legend=True)
+ma7c.loc["2026-01"].plot(label="중심 7일", legend=True)
 ```
 
-**Q9.** 원본의 바닥은 1/21(-11.0°C)이다. 후행 선(주황)의 바닥은
-며칠인가 — 실제보다 며칠 늦은가? 중심 선(초록)의 바닥은? 후행 창이
+**Q9.** 원본의 바닥은 1/21(-11.0°C)이다. 후행 선의 바닥은
+며칠인가 — 실제보다 며칠 늦은가? 중심 선의 바닥은? 후행 창이
 늦는 이유를 "창 안에 무엇이 들어 있나"로 설명해 보자.
 
 후행 바닥: ______ (______일 늦음)  중심 바닥: ______
@@ -168,9 +169,9 @@ rolling 창의 무게는 이상하다: 창 안의 7일은 전부 똑같이 중�
 
 ```python
 e = t.ewm(alpha=0.3).mean()
-t.loc["2026-01"].plot()
-ma7.loc["2026-01"].plot()
-e.loc["2026-01"].plot()
+t.loc["2026-01"].plot(label="원본", legend=True)
+ma7.loc["2026-01"].plot(label="7일 이동평균", legend=True)
+e.loc["2026-01"].plot(label="지수평활", legend=True)
 ```
 
 ```python
@@ -192,9 +193,9 @@ e.loc["2026-01-21"]
 이번엔 α를 바꿔 본다:
 
 ```python
-t.loc["2026-01"].plot()
-t.ewm(alpha=0.1).mean().loc["2026-01"].plot()
-t.ewm(alpha=0.7).mean().loc["2026-01"].plot()
+t.loc["2026-01"].plot(label="원본", legend=True)
+t.ewm(alpha=0.1).mean().loc["2026-01"].plot(label="α=0.1", legend=True)
+t.ewm(alpha=0.7).mean().loc["2026-01"].plot(label="α=0.7", legend=True)
 ```
 
 **Q12.** α가 크면(0.7) 선이 어떻게 되고, 작으면(0.1) 어떻게
