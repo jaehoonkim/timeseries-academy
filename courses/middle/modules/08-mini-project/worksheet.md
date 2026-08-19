@@ -42,7 +42,16 @@
 CSV 파일 하나로 만든다. 요건: **날짜 열 + 값 열**, 60행 이상 권장.
 
 1. Colab 왼쪽 **파일 탭** → 업로드 버튼으로 CSV를 올린다.
-2. 불러온다 (열 이름은 내 파일에 맞게):
+2. 한글 준비 — Colab에는 한글 글꼴이 없어서, 내 데이터의 한글
+   열 이름이 그래프에서 □로 깨진다. 이 두 줄이 글꼴을 설치하고
+   등록한다 (`!`로 시작하는 줄은 파이썬이 아니라 시스템 명령):
+
+```python
+!pip install -q koreanize-matplotlib
+import koreanize_matplotlib
+```
+
+3. 불러온다 (열 이름은 내 파일에 맞게):
 
 ```python
 import pandas as pd
@@ -55,7 +64,7 @@ df.head()
   `pd.read_csv("내파일.csv", encoding="cp949", ...)` — 오래된 한글
   인코딩으로 저장된 파일이라는 뜻이다.
 
-3. 첫 점검 3종 세트 (M6·M7):
+4. 첫 점검 3종 세트 (M6·M7):
 
 ```python
 len(df)

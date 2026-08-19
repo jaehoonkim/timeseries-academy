@@ -96,7 +96,11 @@ df = pd.read_csv("내파일.csv", parse_dates=["날짜열"], index_col="날짜�
 df.head()
 ```
 
-- 한글이 깨지면 `encoding="cp949"`를 추가한다(공공데이터에 흔하다).
+- CSV의 한글이 깨지면 `encoding="cp949"`를 추가한다(공공데이터에
+  흔하다).
+- 그래프의 한글이 □로 나오면 먼저
+  `!pip install -q koreanize-matplotlib` → `import koreanize_matplotlib`
+  (워크북 2절의 준비 셀).
 - 날짜 형식이 안 읽히면 `pd.to_datetime(..., format="...")`으로
   형식을 지정한다.
 - 첫 점검은 늘 세 가지: 행 수, 기간, 결측 개수(M7).
