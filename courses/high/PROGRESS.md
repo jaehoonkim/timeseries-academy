@@ -41,3 +41,8 @@
   worksheet 2절 첫머리에 `!pip install -q koreanize-matplotlib` +
   `import koreanize_matplotlib` 준비 셀 추가, teacher 예상 질문에
   재실행 안내. → worksheet/teacher 반영됨.
+- **H3** 지수평활 도입(5절)의 무게 나열(0.3, 0.21, 0.147, …)만으로는
+  이해가 안 됨 → 점화식 읽기 "오늘 평활값 = 0.3×오늘 + 0.7×어제
+  평활값(새 소식 30% + 기억 70%)"을 워크시트에 추가하고, teacher
+  0:52 흐름에 "무게 나열이 낯설면 점화식부터"를 명시.
+  → worksheet/teacher 반영됨.
