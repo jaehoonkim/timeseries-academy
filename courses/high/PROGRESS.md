@@ -37,3 +37,7 @@
   안내("파랑→주황→초록")에 의존 → 겹쳐 그리기 셀 6개 전부에
   `label=`·`legend=True`를 명시해 그래프가 범례로 직접 답하게 함.
   → worksheet/teacher 반영됨.
+- **H3** Colab에 한글 글꼴이 없어 범례 한글이 □로 깨짐 →
+  worksheet 2절 첫머리에 `!pip install -q koreanize-matplotlib` +
+  `import koreanize_matplotlib` 준비 셀 추가, teacher 예상 질문에
+  재실행 안내. → worksheet/teacher 반영됨.

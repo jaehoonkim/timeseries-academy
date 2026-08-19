@@ -36,6 +36,15 @@ H2에서 하루하루의 출렁임(표준편차)을 쟀다. 오늘은 그 출렁
 
 ## 2. 파이썬으로 — rolling
 
+준비: Colab에는 한글 글꼴이 없어서 그래프의 한글(범례 등)이 □로
+깨진다. 아래 두 줄이 한글 글꼴을 설치하고 matplotlib에 등록한다
+(`!`로 시작하는 줄은 파이썬이 아니라 시스템 명령이다):
+
+```python
+!pip install -q koreanize-matplotlib
+import koreanize_matplotlib
+```
+
 데이터를 불러온다:
 
 ```python
