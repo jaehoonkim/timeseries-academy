@@ -67,7 +67,7 @@
 ## 완성 노트북 예시 설명
 
 - 셀 구성: ① koreanize 설치 ② import+read_csv+t ③ monthly·a
-  두 줄 ④ pair 정의+head ⑤ 원본 lag plot ⑥ t.corr(t.shift(1))
+  두 줄 ④ pair 정의+head ⑤ 원본 lag plot ⑥ pair 두 열의 상관
   ⑦ 편차 lag plot ⑧ a.corr(a.shift(1)) ⑨ 편차 ACF(시차 30까지)
   ⑩ 원본 ACF(시차 365까지) ⑪ 시차 182 lag plot ⑫ 평균 전략 오차
   ⑬ naive 전략 오차 — 열세 셀.
