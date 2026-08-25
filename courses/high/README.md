@@ -18,7 +18,7 @@
 | [H4](modules/04-decomposition/) | 계절성과 분해 | 계절성 프로필, 편차, 추세+계절+잔차 손 분해 |
 | [H5](modules/05-autocorrelation/) | 자기상관 | 상관계수, lag plot, ACF, naive가 강한 이유 |
 | [H6](modules/06-forecast-evaluation/) | 예측과 평가 | 벤치마크 4종 대결, 홀드아웃, MAE·RMSE |
-| H7 | 회귀로 예측 | 특징 만들기(월·요일·lag), 선형회귀, 벤치마크 이기기 |
+| [H7](modules/07-regression-forecast/) | 회귀로 예측 | 특징 테이블(어제·달의 보통), 선형회귀, 재료 실험, 벤치마크 도전 |
 | H8 | 미니 프로젝트 | 각자 데이터 수집 → 분석 → 예측 → 발표 |
 
 서사 축: 본다 → 분포로 잰다 → 매끈하게 편다 → 쪼갠다 → 시간의 관계를
