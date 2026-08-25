@@ -138,24 +138,37 @@ train.mean(): ______ °C
 서약이 `.shift(1)`이다 — H5에서 배운 그 도구가, 여기서는 "예측을
 하루 뒤로 밀어 어제까지의 정보로 만들기"로 다시 쓰인다.
 
+**naive** — 내일은 오늘과 같다. H5의 그 선수다:
+
 ```python
 pred_naive = t.shift(1)[test.index]
-pred_snaive = t.shift(365)[test.index]
-pred_ma = t.rolling(window=7).mean().shift(1)[test.index]
-pred_ses = t.ewm(alpha=0.3).mean().shift(1)[test.index]
 ```
 
 (끝에 붙은 `[test.index]`는 "시험 구간의 날짜들만 골라내라"다 —
-채점은 시험 구간에서만 하기로 했으므로.)
+채점은 시험 구간에서만 하기로 했으므로. 아래 세 선수도 같다.)
 
-- **naive**: 내일은 오늘과 같다 — H5의 그 선수.
-- **계절 naive**(seasonal naive): 내일은 **작년 같은 날**과 같다
-  — shift(365). (윤일이 끼면 하루 어긋날 수 있는데, 우리 시험
-  구간은 안 걸려서 정확히 작년 같은 날짜다.)
-- **이동평균**: 내일은 **어제까지 7일의 평균**과 같다 — H3의
-  rolling.
-- **지수평활**: 내일은 어제까지의 지수평활값과 같다 — H3의 ewm,
-  새 소식 30%(alpha=0.3).
+**계절 naive**(seasonal naive) — 내일은 **작년 같은 날**과 같다:
+
+```python
+pred_snaive = t.shift(365)[test.index]
+```
+
+(윤일이 끼면 하루 어긋날 수 있는데, 우리 시험 구간은 안 걸려서
+정확히 작년 같은 날짜다.)
+
+**이동평균** — 내일은 **어제까지 7일의 평균**과 같다. H3의
+rolling이다:
+
+```python
+pred_ma = t.rolling(window=7).mean().shift(1)[test.index]
+```
+
+**지수평활** — 내일은 어제까지의 지수평활값과 같다. H3의 ewm,
+새 소식 30%(alpha=0.3)다:
+
+```python
+pred_ses = t.ewm(alpha=0.3).mean().shift(1)[test.index]
+```
 
 **Q7.** 이동평균과 지수평활에는 왜 `.shift(1)`이 붙어 있을까?
 H3에서 배운 rolling의 성질(창에 오늘이 포함된다)을 떠올려 보자.
