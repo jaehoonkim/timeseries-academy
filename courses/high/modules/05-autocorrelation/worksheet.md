@@ -231,7 +231,8 @@ acf_t.plot(label="원본의 자기상관", legend=True)
 
 이유: ____________
 
-바닥을 그림으로도 확인해 보자 — "반년 전 vs 오늘"의 lag plot이다:
+바닥을 그림으로도 확인해 보자 — "반년 전(365일의 절반, 시차
+182) vs 오늘"의 lag plot이다:
 
 ```python
 pair_182 = pd.DataFrame({"반년 전": t.shift(182), "오늘": t})
