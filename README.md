@@ -9,8 +9,7 @@
 |---|---|---|
 | [courses/middle](courses/middle/) | 중학생 | 완성 (모듈 8개) |
 | [courses/high](courses/high/) | 고등학생 | 완성 (모듈 8개) |
-
-마지막 단계인 대학생 과정은 앞선 과정의 제작·강의 경험을 바탕으로 이후에 설계한다.
+| [courses/university](courses/university/) | 대학생 | 제작 중 |
 
 ## 구조
 
