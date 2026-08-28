@@ -224,8 +224,8 @@ s.autocorr(1), s.autocorr(7)
 test_t = t["2025-08-01":]
 e1 = test_t - t.shift(1)["2025-08-01":]
 e7 = test_t - t.shift(7)["2025-08-01":]
-print("naive   ", e1.abs().mean().round(2), ((e1**2).mean()**0.5).round(2))
-print("주간naive", e7.abs().mean().round(2), ((e7**2).mean()**0.5).round(2))
+print("naive   ", round(e1.abs().mean(), 2), round((e1**2).mean()**0.5, 2))
+print("주간naive", round(e7.abs().mean(), 2), round((e7**2).mean()**0.5, 2))
 ```
 
 **Q6.** 기온의 채점표 (°C):
@@ -241,8 +241,8 @@ print("주간naive", e7.abs().mean().round(2), ((e7**2).mean()**0.5).round(2))
 test_s = s["2025-08-01":]
 f1 = test_s - s.shift(1)["2025-08-01":]
 f7 = test_s - s.shift(7)["2025-08-01":]
-print("naive   ", (f1.abs().mean()/1e4).round(1), ((f1**2).mean()**0.5/1e4).round(1))
-print("주간naive", (f7.abs().mean()/1e4).round(1), ((f7**2).mean()**0.5/1e4).round(1))
+print("naive   ", round(f1.abs().mean()/1e4, 1), round((f1**2).mean()**0.5/1e4, 1))
+print("주간naive", round(f7.abs().mean()/1e4, 1), round((f7**2).mean()**0.5/1e4, 1))
 ```
 
 **Q7.** 지하철의 채점표 (만 명):

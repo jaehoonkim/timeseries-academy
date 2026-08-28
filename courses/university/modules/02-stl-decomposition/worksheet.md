@@ -83,7 +83,7 @@ trend_hand.plot(figsize=(10, 3), title="손 분해의 추세")
 ```
 
 ```python
-trend_hand.min().round(2), trend_hand.max().round(2), resid_hand.std().round(1)
+round(trend_hand.min(), 2), round(trend_hand.max(), 2), round(resid_hand.std(), 1)
 ```
 
 **Q2.** 손 분해의 추세는 ______ 에서 ______ 사이 — 폭이 1도가 안
@@ -121,7 +121,7 @@ stl_t.plot();
 ```
 
 ```python
-stl_t.trend.std().round(1), stl_t.seasonal.std().round(1), stl_t.resid.std().round(1)
+round(stl_t.trend.std(), 1), round(stl_t.seasonal.std(), 1), round(stl_t.resid.std(), 1)
 ```
 
 **Q3.** 세 성분의 표준편차 — 크기가 곧 그 성분의 발언권이다:
@@ -209,7 +209,7 @@ zq[abs(zq) > 3]
 오늘이 무관한 잡음)여야 한다. U1의 도구로 확인하자:
 
 ```python
-stl_t.resid.autocorr(1).round(2), stl_s.resid.autocorr(1).round(2)
+round(stl_t.resid.autocorr(1), 2), round(stl_s.resid.autocorr(1), 2)
 ```
 
 **Q8.** 기온 잔차의 시차 1 자기상관: ______ (원본은 0.98이었다).
