@@ -110,8 +110,11 @@ STL은 statsmodels에서 온다 — Colab에 기본 설치된 통계 모형
 > = 실제로 쪼개라 — 결과에 `.trend` `.seasonal` `.resid` 세
 > 성분이 담긴다
 >
-> `.plot()`
-> = 관측·추세·계절·잔차 네 층 그림을 한 번에
+> `.plot();`
+> = 관측·추세·계절·잔차 네 층 그림을 한 번에 — 줄 끝의
+> 세미콜론은 "결과값 출력은 생략"이다. 빼면 같은 그림이 두 번
+> 나온다(고장 아님 — 그림 객체가 결과값으로 한 번 더 표시되는
+> 것)
 
 ```python
 from statsmodels.tsa.seasonal import STL
