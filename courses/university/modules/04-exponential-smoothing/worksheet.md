@@ -134,7 +134,10 @@ Holt는 사람 이름이다 — 1950년대에 이 방법을 만든 통계학자 
 **추세**(하루치 변화량)를 두 번째 배합으로 함께 굴린다: 수준은
 α로, 변화량은 β로 갱신하고, 예측은 "**수준 + 변화량**"이다.
 어제까지 오르막이었다면 내일은 조금 더 위로 — naive가 못 하는
-방향 반영이다. 코드는 옵션 하나 차이다:
+방향 반영이다. 코드는 옵션 하나 차이다. statsmodels의 이름표는
+그리스 문자가 아니라서 대응을 적어 두자 — α는
+`"smoothing_level"`, β는 `"smoothing_trend"`: 아래 셀의 출력
+(첫째, 둘째) 값이 곧 (α, β)다.
 
 ```python
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
@@ -175,6 +178,8 @@ hw = ExponentialSmoothing(train_s, trend="add", seasonal="add",
  round(hw.params["smoothing_trend"], 4),
  round(hw.params["smoothing_seasonal"], 3))
 ```
+
+(출력은 순서대로 α, β, γ — 계절의 γ는 `"smoothing_seasonal"`이다)
 
 **Q4.** 배합 세 개를 읽자 — α(수준) ______, β(추세) ______,
 γ(계절) ______.
