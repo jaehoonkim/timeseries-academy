@@ -9,7 +9,7 @@
   data/build-subway-daily.py.
 - [x] U1 파이프라인 압축 재구축 (2026-08-28)
 - [x] U2 분해 정식 — STL (2026-08-30)
-- [ ] U3 시계열의 어휘 — ACF·PACF와 정상성
+- [x] U3 시계열의 어휘 — ACF·PACF와 정상성 (2026-08-30)
 - [ ] U4 지수평활 가족 — ETS
 - [ ] U5 ARIMA
 - [ ] U6 SARIMA와 예측 구간
