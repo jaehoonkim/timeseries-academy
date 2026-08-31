@@ -15,7 +15,7 @@
 | [U2](modules/02-stl-decomposition/) | 분해 정식 — STL | 손 분해의 자동화, 추세/계절/잔차, 두 데이터의 분해 대조 |
 | [U3](modules/03-acf-pacf-stationarity/) | 시계열의 어휘 — ACF·PACF와 정상성 | ACF·PACF, 정상성, 차분이라는 처방 |
 | [U4](modules/04-exponential-smoothing/) | 지수평활 가족 — ETS | SES → Holt → Holt-Winters, 배합의 정식 모형화 |
-| U5 | ARIMA | AR·MA의 뜻, 차수 고르기(ACF/PACF + AIC), 잔차 진단 |
+| [U5](modules/05-arima/) | ARIMA | AR·MA의 뜻, 차수 고르기(ACF/PACF + AIC), 잔차 진단 |
 | U6 | SARIMA와 예측 구간 | 계절 차수, 점 예측에서 구간 예측으로 |
 | U7 | 특징 기반 ML 도전 | lag·달력·rolling 특징, 부스팅, rolling-origin 교차검증, 고전과의 대결 |
 | U8 | 파이널 프로젝트 | 각자 데이터로 전 과정 + 모형 대결 + 구간 예측, 발표 |
