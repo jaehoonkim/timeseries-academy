@@ -17,7 +17,7 @@
 | [U4](modules/04-exponential-smoothing/) | 지수평활 가족 — ETS | SES → Holt → Holt-Winters, 배합의 정식 모형화 |
 | [U5](modules/05-arima/) | ARIMA | AR·MA의 뜻, 차수 고르기(ACF/PACF + AIC), 잔차 진단 |
 | [U6](modules/06-sarima-intervals/) | SARIMA와 예측 구간 | 계절 차수, 점 예측에서 구간 예측으로 |
-| U7 | 특징 기반 ML 도전 | lag·달력·rolling 특징, 부스팅, rolling-origin 교차검증, 고전과의 대결 |
+| [U7](modules/07-ml-features/) | 특징 기반 ML 도전 | lag·달력·rolling 특징, 부스팅, rolling-origin 교차검증, 고전과의 대결 |
 | U8 | 파이널 프로젝트 | 각자 데이터로 전 과정 + 모형 대결 + 구간 예측, 발표 |
 
 서사 축: 벽을 다시 세운다 → 쪼개서 듣는다 → 어휘를 갖춘다 →
