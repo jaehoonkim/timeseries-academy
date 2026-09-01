@@ -61,3 +61,5 @@
 - 국가통계포털 KOSIS — 인구, 물가지수 (kosis.kr)
 - 네이버/구글 트렌드 — 검색어 관심도 추이
 - 본인 스마트폰 걸음 수, 스크린타임
+
+설계 배경은 [설계 문서](../../docs/superpowers/specs/2026-08-14-timeseries-curriculum-design.md) 참고.
