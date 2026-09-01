@@ -143,12 +143,13 @@ U4의 챔피언 Holt-Winters와 비교하면? U5의 대패와 비교하면?
 마무리는 U5 6절의 그 동작 — **잔차 진단**이다: 모형이 쓰고
 남긴 잔차에 아직 구조가 남았는지 ACF로 검사하고, 남은 게
 없으면 사냥 완료. U5에서 첫 값 하나를 뺐듯, 이번에는 계절
-차분의 시동에 **이레**가 든다:
+차분의 시동에 **첫 7일**이 든다(첫 7일은 '지난주
+같은 요일'이 없다):
 
 ```python
 from statsmodels.graphics.tsaplots import plot_acf
 
-plot_acf(champ.resid.iloc[7:], lags=10);   # 첫 이레는 시동 전 잔차라 뺀다
+plot_acf(champ.resid.iloc[7:], lags=10);   # 첫 7일은 시동 전 잔차라 뺀다
 ```
 
 **Q3.** 막대 열 개 중 띠 밖은 몇 개인가? ______ 개.
