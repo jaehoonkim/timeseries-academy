@@ -9,12 +9,13 @@
 |---|---|---|
 | [courses/middle](courses/middle/) | 중학생 | 완성 (모듈 8개) |
 | [courses/high](courses/high/) | 고등학생 | 완성 (모듈 8개) |
-| [courses/university](courses/university/) | 대학생 | 제작 중 |
+| [courses/university](courses/university/) | 대학생 | 완성 (모듈 8개) |
 
 ## 구조
 
-- [data/](data/) — 과정 간 공유 실습 데이터 (서울 일별 기온)
+- [data/](data/) — 과정 간 공유 실습 데이터 (서울 일별 기온, 서울 지하철 일별 승하차)
 - [courses/](courses/) — 대상별 과정. 각 과정은 60~90분 수업 단위의 독립 모듈로 구성
 - [docs/](docs/) — 설계 문서
 
-설계 배경은 [설계 문서](docs/superpowers/specs/2026-08-14-timeseries-curriculum-design.md) 참고.
+과정별 설계 배경은 각 과정 README에 링크된 설계 문서
+([docs/superpowers/specs/](docs/superpowers/specs/)) 참고.
