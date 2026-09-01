@@ -1,2 +1,5 @@
 *.pptx
 *.pdf
+
+# 슬라이드 PDF 산출물은 배포용으로 커밋한다
+!slides-pdf/*.pdf
